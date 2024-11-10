@@ -3,10 +3,7 @@ public class Main {
     private float inputValue = 0.0f;
     private float outputValue = 0.0f;
     public static void main(String[] args) {
-    //Entr
-    public void setInputValue(float inputValue) {
-        this.inputValue = inputValue;
-    }ada
+    //Entrada
         System.out.println("conversor COP a USD");
         System.out.println("Ingrese la cantidad a convertir");
         Scanner consoleInput = new Scanner(System.in);
