@@ -1,12 +1,16 @@
+import java.util.Scanner;
 public class Main {
     private float inputValue = 0.0f;
     private float outputValue = 0.0f;
-
     public static void main(String[] args) {
-    //entrada
+    //Entr
+    public void setInputValue(float inputValue) {
+        this.inputValue = inputValue;
+    }ada
         System.out.println("conversor COP a USD");
         System.out.println("Ingrese la cantidad a convertir");
-
+        Scanner consoleInput = new Scanner(System.in);
+        thi.setInputValue(consoleInput.nextFloat());
     }
 
 
@@ -17,6 +21,7 @@ public class Main {
     public float getOutputValue() {
         return outputValue;
     }
+
 
     public void setInputValue(float inputValue) {
         this.inputValue = inputValue;
