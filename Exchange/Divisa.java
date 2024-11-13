@@ -1,3 +1,4 @@
+package Exchange;
 public class Divisa {
 
     private float inputValue = 0.0f;
