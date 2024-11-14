@@ -6,19 +6,23 @@ import java.io.IOException;
 import java.util.Scanner;
 public class Main {
 
-
     public static void main(String[] args) throws IOException, InterruptedException {
         //Entrada
-        Divisa cantidadConvertir = new Divisa();
-
-        System.out.println("conversor COP a USD");
+        //Divisa cantidadConvertir = new Divisa();
+        float quantityInput = 0.0f;
+        String currencyInput = "";
         System.out.println("Ingrese la cantidad  a convertir");
         Scanner consoleInput = new Scanner(System.in);
-        cantidadConvertir.setInputValue(consoleInput.nextFloat()  );// hace falta una excepcion?
+        quantityInput = consoleInput.nextFloat();
+        System.out.println("Ingrese la divisa a convertir");
+        currencyInput = consoleInput.next();
+        API.setRequestetCurrency(currencyInput);
+        //cantidadConvertir.setInputValue(consoleInput.nextFloat()  );
         //llamar API
-        cantidadConvertir.setOutputValue(1.0f); //asignar api https://v6.exchangerate-api.com/v6/fa37220fcc819142601953c3/latest/COP
-        System.out.println(cantidadConvertir.getInputValue());
-        API.apiConsume();
+       // System.out.println(cantidadConvertir.getInputValue());
+        System.out.println(API.apiConsume());// necesita una excepción en el main pq las request http pueden fallar por muchas cosas
+      //  cantidadConvertir.setOutputValue(1.0f); //asignar api https://v6.exchangerate-api.com/v6/fa37220fcc819142601953c3/latest/COP
+
     }
 /*que he logrado,
 * Recibo la info y la guardo correctamente en la instancia de la clase divisa y la puedo recuperar para imprimirla en el main
