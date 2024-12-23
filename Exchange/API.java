@@ -10,22 +10,23 @@ import java.net.http.HttpResponse;
 
 public class API {
 
-    private static String apiUrl =new String ("https://v6.exchangerate-api.com/v6/fa37220fcc819142601953c3/latest/");
-    private static String requestetCurrency = new String("USD");
+    private static String apiUrl ="https://v6.exchangerate-api.com/v6/fa37220fcc819142601953c3/latest/";
+    private static String requestetCurrency = "";
 
     public static String getApiUrl() {return apiUrl;}
-    public static String getRequestetCurrency() {return requestetCurrency;}
     public static void setApiUrl() {apiUrl +=getRequestetCurrency() ;}
-    public static void setRequestetCurrency(String userRequestetCurrency){ requestetCurrency = userRequestetCurrency;}
+
+    public static String getRequestetCurrency() {return requestetCurrency;}
+    public static void setRequestetCurrency(String digitedCurrency){ requestetCurrency = digitedCurrency;}
+
     //los parametros en metodos en java no aceptan valores predeterminado
 
-    public static String apiConsume() throws IOException, InterruptedException {
-    setApiUrl();
-    HttpClient mioClient = HttpClient.newHttpClient();
-    HttpRequest miaRequesta = HttpRequest.newBuilder().uri(URI.create(apiUrl)).build();
-        System.out.println("metodo estatico de la clase API, este metodo esta hecho para consumir la api");
-
-    HttpResponse<String> apiResponse = mioClient.send(miaRequesta, HttpResponse.BodyHandlers.ofString());
+    public static String apiConsume(String digitedCurrency) throws IOException, InterruptedException {
+        setRequestetCurrency(digitedCurrency);
+        setApiUrl();
+        HttpClient myHttpClient = HttpClient.newHttpClient();
+        HttpRequest myHttpRequest = HttpRequest.newBuilder().uri(URI.create(apiUrl)).build();
+        HttpResponse<String> apiResponse = myHttpClient.send(myHttpRequest, HttpResponse.BodyHandlers.ofString());
         return  apiResponse.body();
     }
 }
