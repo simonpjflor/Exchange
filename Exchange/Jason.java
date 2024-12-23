@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
     public class Jason {
         @SerializedName("result")
         private String apiResponseStatus = "";
-        public class conversion_rates{
+        public class ConversionRates{
         //most traded currencies
         @SerializedName("USD")
         private float usd = 0.0f;
@@ -35,9 +35,9 @@ import com.google.gson.annotations.SerializedName;
         public void setAud(float aud) {this.aud = aud;}
         }
         @SerializedName("conversion_rates")
-        conversion_rates storedConversions;
-        public conversion_rates getstoredConversions() {return storedConversions;}
-        public void setstoredConversions(conversion_rates storedConversions) {this.storedConversions = storedConversions;}
+        ConversionRates storedConversions;
+        public ConversionRates getstoredConversions() {return storedConversions;}
+        public void setstoredConversions(ConversionRates storedConversions) {this.storedConversions = storedConversions;}
 
     public void Printo() {
         System.out.printf("""
