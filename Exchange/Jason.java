@@ -34,6 +34,7 @@ import com.google.gson.annotations.SerializedName;
         public float getAud() {return aud;}
         public void setAud(float aud) {this.aud = aud;}
         }
+        @SerializedName("conversion_rates")
         conversion_rates storedConversions;
         public conversion_rates getstoredConversions() {return storedConversions;}
         public void setstoredConversions(conversion_rates storedConversions) {this.storedConversions = storedConversions;}
@@ -41,7 +42,7 @@ import com.google.gson.annotations.SerializedName;
     public void Printo() {
         System.out.printf("""
                 Objeto Jason
-                resultado : %s
+                resultado : %s 
                 json interno 
                 USD: %.3f
                 EUR: %.3f
