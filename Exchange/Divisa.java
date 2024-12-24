@@ -35,6 +35,6 @@ public class Divisa {
         }""";
 
         Jason currentConvertion = jsonMapper.fromJson(apiResultJson,Jason.class); // no esta guardando en el interno
-        currentConvertion.Printo();
+        currentConvertion.Validation(amount,digitedCurrency);
     }
 }
