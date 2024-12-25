@@ -1,5 +1,6 @@
+//los parametros en metodos en java no aceptan valores predeterminado
 /*
-llama a la API con la divisa seleccionada
+Consumes the API returning the whole http response
 */
 package Exchange;
 import java.io.IOException;
@@ -18,8 +19,6 @@ public class API {
 
     public static String getRequestetCurrency() {return requestetCurrency;}
     public static void setRequestetCurrency(String digitedCurrency){ requestetCurrency = digitedCurrency;}
-
-    //los parametros en metodos en java no aceptan valores predeterminado
 
     public static String apiConsume(String digitedCurrency) throws IOException, InterruptedException {
         setRequestetCurrency(digitedCurrency);
