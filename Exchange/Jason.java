@@ -47,12 +47,13 @@ import com.google.gson.annotations.SerializedName;
             Printo();
         }else{
             Printo(amount, digitedCurrency);
+            Printo();
         }
     }
-    public void Printo(){
+    public void Printo( ){
         System.out.printf("""
-                resultado : %s
-            
+                \nresultado : %s
+           
                 USD: %.3f
                 EUR: %.3f
                 JPY: %.3f
