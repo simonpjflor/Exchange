@@ -34,7 +34,12 @@ public class Divisa {
         }
         }""";
 
+<<<<<<< HEAD
         Jason currentConvertion = jsonMapper.fromJson(prueba,Jason.class); // no esta guardando en el interno
         currentConvertion.Printo();
+=======
+        Jason currentConvertion = jsonMapper.fromJson(apiResultJson,Jason.class); // no esta guardando en el interno
+        currentConvertion.Validation(amount,digitedCurrency);
+>>>>>>> main
     }
 }

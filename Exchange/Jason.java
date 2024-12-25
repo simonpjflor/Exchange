@@ -39,19 +39,44 @@ import com.google.gson.annotations.SerializedName;
         public ConversionRates getstoredConversions() {return storedConversions;}
         public void setstoredConversions(ConversionRates storedConversions) {this.storedConversions = storedConversions;}
 
-    public void Printo() {
+    public void Validation(float amount, String digitedCurrency) {
+        /*multiplicar el amount*/
+        if (amount <0){
+            amount =-amount;
+        }if (amount ==0 || amount ==1) {
+            Printo();
+        }else{
+            Printo(amount, digitedCurrency);
+            Printo();
+        }
+    }
+    public void Printo( ){
         System.out.printf("""
+<<<<<<< HEAD
                 Objeto Jason
                 resultado : %s 
                 json interno 
+=======
+                \nresultado : %s
+           
+>>>>>>> main
                 USD: %.3f
                 EUR: %.3f
                 JPY: %.3f
                 GBP: %.3f
                 AUD: %.3f
                 """,apiResponseStatus,storedConversions.getUsd(), storedConversions.getEur(),
-                    storedConversions.getJpy(), storedConversions.getGbp(),
-                    storedConversions.getAud()); // no esta guardando el json
+                storedConversions.getJpy(),storedConversions.getGbp(),
+                storedConversions.getAud());
     }
-}
+    public void Printo(float amount, String digitedCurrency){
+        System.out.printf("\nresultado: "+apiResponseStatus+"\n"
+                +amount+" "+digitedCurrency+" = USD: "+ String.format("%.2f", amount * storedConversions.getUsd())+"\n"
+                +amount+" "+digitedCurrency+" = EUR: "+String.format("%.2f", amount*storedConversions.getEur())+"\n"
+                +amount+" "+digitedCurrency+" = JPY: "+String.format("%.2f", amount*storedConversions.getJpy())+"\n"
+                +amount+" "+digitedCurrency+" = GBP: "+String.format("%.2f", amount*storedConversions.getGbp())+"\n"
+                +amount+" "+digitedCurrency+" = AUD: "+String.format("%.2f", amount*storedConversions.getAud())+"\n");
+        }
+
+    }
 
