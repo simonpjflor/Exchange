@@ -16,9 +16,10 @@ public class Divisa {
     public void setdigitedCurrency(String digitedCurrency) {this.digitedCurrency = digitedCurrency;}
 
     public static void ConvertCurrency(float amount, String digitedCurrency) throws IOException, InterruptedException {//excepcion para requests http
-       // String apiResultJson = API.apiConsume(digitedCurrency);
-     // System.out.println("Full API Responde\n"+ apiResultJson);
-     //   Jason currentConvertion = new Jason();
+        String apiResultJson = API.apiConsume(digitedCurrency);
+     // System.out.println("Full API Respons
+        // e\n"+ apiResultJson);
+        Jason currentConvertion = new Jason();
         Gson jsonMapper = new Gson();
         String prueba =""" 
         {
@@ -34,12 +35,12 @@ public class Divisa {
         }
         }""";
 
-<<<<<<< HEAD
-        Jason currentConvertion = jsonMapper.fromJson(prueba,Jason.class); // no esta guardando en el interno
-        currentConvertion.Printo();
-=======
-        Jason currentConvertion = jsonMapper.fromJson(apiResultJson,Jason.class); // no esta guardando en el interno
+
+        //currentConvertion = jsonMapper.fromJson(prueba,Jason.class); // no esta guardando en el interno
+       // currentConvertion.Printo();
+
+        currentConvertion = jsonMapper.fromJson(apiResultJson,Jason.class); // no esta guardando en el interno
         currentConvertion.Validation(amount,digitedCurrency);
->>>>>>> main
+
     }
 }

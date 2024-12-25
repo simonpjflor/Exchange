@@ -44,38 +44,33 @@ import com.google.gson.annotations.SerializedName;
         if (amount <0){
             amount =-amount;
         }if (amount ==0 || amount ==1) {
-            Printo();
+            Printo(digitedCurrency);
         }else{
             Printo(amount, digitedCurrency);
-            Printo();
+            Printo(digitedCurrency);
         }
     }
-    public void Printo( ){
-        System.out.printf("""
-<<<<<<< HEAD
-                Objeto Jason
-                resultado : %s 
-                json interno 
-=======
-                \nresultado : %s
-           
->>>>>>> main
-                USD: %.3f
-                EUR: %.3f
-                JPY: %.3f
-                GBP: %.3f
-                AUD: %.3f
-                """,apiResponseStatus,storedConversions.getUsd(), storedConversions.getEur(),
+    public void Printo(String digitedCurrency ){
+            /*cambiar el orden de invocacion en los metodos no resuelve le problema talvez sean los nombres iguales
+            * no lo he investigado o talvez sea l aforma de imprimir, que anteior mente no daba problema y seria raro que lo de ahroa
+            * dos cosas para probar*/
+        System.out.printf("\nresultado: %s\n"
+                +"1 "+ digitedCurrency+" = USD: %f\n"
+                +"1 "+ digitedCurrency+" = EUR: %f\n"
+                +"1 "+ digitedCurrency+" = JPY: %f\n"
+                +"1 "+ digitedCurrency+" = GBP: %f\n"
+                +"1 "+ digitedCurrency+" = AUD: %f\n",
+                apiResponseStatus,storedConversions.getUsd(), storedConversions.getEur(),
                 storedConversions.getJpy(),storedConversions.getGbp(),
                 storedConversions.getAud());
     }
     public void Printo(float amount, String digitedCurrency){
         System.out.printf("\nresultado: "+apiResponseStatus+"\n"
-                +amount+" "+digitedCurrency+" = USD: "+ String.format("%.2f", amount * storedConversions.getUsd())+"\n"
-                +amount+" "+digitedCurrency+" = EUR: "+String.format("%.2f", amount*storedConversions.getEur())+"\n"
-                +amount+" "+digitedCurrency+" = JPY: "+String.format("%.2f", amount*storedConversions.getJpy())+"\n"
-                +amount+" "+digitedCurrency+" = GBP: "+String.format("%.2f", amount*storedConversions.getGbp())+"\n"
-                +amount+" "+digitedCurrency+" = AUD: "+String.format("%.2f", amount*storedConversions.getAud())+"\n");
+                +amount+" "+digitedCurrency+" = USD: "+ String.format("%f", amount * storedConversions.getUsd())+"\n"
+                +amount+" "+digitedCurrency+" = EUR: "+String.format("%f", amount*storedConversions.getEur())+"\n"
+                +amount+" "+digitedCurrency+" = JPY: "+String.format("%f", amount*storedConversions.getJpy())+"\n"
+                +amount+" "+digitedCurrency+" = GBP: "+String.format("%f", amount*storedConversions.getGbp())+"\n"
+                +amount+" "+digitedCurrency+" = AUD: "+String.format("%f", amount*storedConversions.getAud())+"\n");
         }
 
     }
