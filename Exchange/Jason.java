@@ -54,15 +54,12 @@ import com.google.gson.annotations.SerializedName;
             /*cambiar el orden de invocacion en los metodos no resuelve le problema talvez sean los nombres iguales
             * no lo he investigado o talvez sea l aforma de imprimir, que anteior mente no daba problema y seria raro que lo de ahroa
             * dos cosas para probar*/
-        System.out.printf("\nresultado: %s\n"
-                +"1 "+ digitedCurrency+" = USD: %f\n"
-                +"1 "+ digitedCurrency+" = EUR: %f\n"
-                +"1 "+ digitedCurrency+" = JPY: %f\n"
-                +"1 "+ digitedCurrency+" = GBP: %f\n"
-                +"1 "+ digitedCurrency+" = AUD: %f\n",
-                apiResponseStatus,storedConversions.getUsd(), storedConversions.getEur(),
-                storedConversions.getJpy(),storedConversions.getGbp(),
-                storedConversions.getAud());
+        System.out.printf("\nresultado:"+apiResponseStatus+"\n"
+                +"1 "+ digitedCurrency+" = USD: "+storedConversions.getUsd()+"\n"
+                +"1 "+ digitedCurrency+" = EUR: "+storedConversions.getEur()+"\n"
+                +"1 "+ digitedCurrency+" = JPY: "+storedConversions.getJpy()+"\n"
+                +"1 "+ digitedCurrency+" = GBP: "+storedConversions.getGbp()+"\n"
+                +"1 "+ digitedCurrency+" = AUD: "+storedConversions.getAud()+"\n");
     }
     public void Printo(float amount, String digitedCurrency){
         System.out.printf("\nresultado: "+apiResponseStatus+"\n"
