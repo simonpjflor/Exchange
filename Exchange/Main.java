@@ -1,22 +1,25 @@
 /*
-Main, instancia la clase divisas y llama a la Api
+Main//Gets inputs//calls methods
 */
 package Exchange;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.util.Scanner;
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-
-        float quantityInput = 0.0f;
-        String currencyInput = "";
-
+    public static void main() throws IOException, InterruptedException {
+//inputs
         System.out.println("Ingrese la cantidad  a convertir");
         Scanner consoleInput = new Scanner(System.in);
-        quantityInput = consoleInput.nextFloat();
+        float amount = consoleInput.nextFloat();
         System.out.println("Ingrese la divisa actual");
-        currencyInput = consoleInput.next();
-
-        Divisa.ConvertCurrency(quantityInput,currencyInput);
+        String initialCurrency = consoleInput.next();
+        System.out.println("Ingrese la divisa deseada");
+        String desiredCurrency = consoleInput.next();
+//
+        Gson gson = new Gson();
+        Jason JsonObject = gson.fromJson(API.apiConsume(initialCurrency),Jason.class);
+        Printing.Validation(JsonObject,amount, initialCurrency,desiredCurrency);
     }
 }
