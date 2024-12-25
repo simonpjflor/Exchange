@@ -20,6 +20,6 @@ public class Main {
 //
         Gson gson = new Gson();
         Jason JsonObject = gson.fromJson(API.apiConsume(initialCurrency),Jason.class);
-        Printing.Validation(JsonObject,amount, initialCurrency,desiredCurrency);
+       // Printing.Validation(JsonObject,amount, initialCurrency,desiredCurrency);
     }
 }

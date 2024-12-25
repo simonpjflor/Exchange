@@ -26,6 +26,7 @@ public class API {
         HttpClient myHttpClient = HttpClient.newHttpClient();
         HttpRequest myHttpRequest = HttpRequest.newBuilder().uri(URI.create(apiUrl)).build();
         HttpResponse<String> apiResponse = myHttpClient.send(myHttpRequest, HttpResponse.BodyHandlers.ofString());
+        System.out.println(apiResponse.body());
         return  apiResponse.body();
     }
 }

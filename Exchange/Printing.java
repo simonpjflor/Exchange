@@ -7,13 +7,13 @@ public class Printing {
         if (amount <0){
             amount =-amount;
         }if (amount ==0 || amount ==1) {
-            Printing.Printing(jsonMapped,initialCurrency);
+            Printing.ToString(jsonMapped,initialCurrency);
         }else{
-            Printing.Printing(jsonMapped,initialCurrency,amount);
-            Printing.Printing(jsonMapped,initialCurrency);
+            Printing.ToString(jsonMapped,initialCurrency,amount);
+            Printing.ToString(jsonMapped,initialCurrency);
         }
     }
-    public static void Printing(Jason jsonMapped, String initialCurrency ){
+    public static void ToString(Jason jsonMapped, String initialCurrency ){
         System.out.printf("\nresult: %s\n"
                 +" "+initialCurrency+" = USD: "+ String.format("%f",jsonMapped.storedConversions.getUsd())+"\n"
                 +" "+initialCurrency+" = EUR: "+String.format("%f",jsonMapped.storedConversions.getEur())+"\n"
@@ -22,7 +22,7 @@ public class Printing {
                 +" "+initialCurrency+" = AUD: "+String.format("%f",jsonMapped.storedConversions.getAud())+"\n");
     }
 
-    public static void Printing(Jason jsonMapped, String initialCurrency, float amount){
+    public static void ToString(Jason jsonMapped, String initialCurrency, float amount){
         System.out.printf("\nresult: "+jsonMapped.getApiResponseStatus()+"\n"
                 +amount+" "+initialCurrency+" = USD: "+ String.format("%f", amount *jsonMapped.storedConversions.getUsd())+"\n"
                 +amount+" "+initialCurrency+" = EUR: "+String.format("%f", amount*jsonMapped.storedConversions.getEur())+"\n"
