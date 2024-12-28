@@ -26,7 +26,7 @@ public class Main {
         String[] topCurrencies = new String[7];
         int i =2;
         if (conversionRates.has(desiredCurrency)){
-            topCurrencies[0]=desiredCurrency+" : "+conversionRates.get(desiredCurrency).getAsFloat()+"\n";
+            topCurrencies[0]=initialCurrency+" " +amount+" = "+desiredCurrency+" : "+conversionRates.get(desiredCurrency).getAsFloat()*amount+"\n";
             topCurrencies[1]="\nMost Traded Currencies\n";
             }
         for (String currency : currencies) {//looks each top currency component in the Json
