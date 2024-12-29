@@ -15,7 +15,7 @@ public class Main {
         float amount = consoleInput.nextFloat();
         System.out.println("Ingrese la divisa actual");
         String initialCurrency = consoleInput.next();
-//
+// Using DTO
         Gson gson = new Gson();
         Jason JsonObject = gson.fromJson(API.apiConsume(initialCurrency),Jason.class);
         Printing.Validation(JsonObject,amount, initialCurrency);
