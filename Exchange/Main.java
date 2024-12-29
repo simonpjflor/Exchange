@@ -3,6 +3,7 @@ Main//Gets inputs//calls methods
 */
 package Exchange;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class Main {
         String initialCurrency = consoleInput.next();
 // Using DTO
         Gson gson = new Gson();
-        Jason JsonObject = gson.fromJson(API.apiConsume(initialCurrency),Jason.class);
+        JsonDto JsonObject = gson.fromJson(API.apiConsume(initialCurrency),JsonDto.class);
         Printing.Validation(JsonObject,amount, initialCurrency);
     }
 }
