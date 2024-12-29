@@ -14,10 +14,11 @@ public class Printing {
         }
     }
     public static void Printing(JsonDto jsonMapped, String initialCurrency ){
-        System.out.println("result: "+ "\n");
+        System.out.println("result: "+ jsonMapped+"\n");
     }
 
     public static void Printing(JsonDto jsonMapped, String initialCurrency, float amount){
+        System.out.println("result: "+ jsonMapped+"\n");
 
     }
 }
