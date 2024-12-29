@@ -22,5 +22,15 @@ public class Main {
         JsonObject jsonObject = JsonParser.parseString(API.apiConsume(initialCurrency)).getAsJsonObject();
         JsonObject conversionRates = jsonObject.getAsJsonObject("conversion_rates");
         Printing.Validation(conversionRates,amount, initialCurrency, desiredCurrency);
+
+/*            float[] amountVEC = {-5.0f,0.0f,1.0f,4.0f};
+            String[] initialCurrencyVEC = {"EUR","USD","AUD","GBP"};
+            String[] desiredCurrencyVEC = {"COP","COP","JPY"};//strings passed within 'cop' single quotes are taken as one single char
+        for (int i=0; i<=3; i++){
+        JsonObject jsonObject = JsonParser.parseString(API.apiConsume(initialCurrencyVEC[i])).getAsJsonObject();
+        JsonObject conversionRates = jsonObject.getAsJsonObject("conversion_rates");
+            System.out.println(" iterador "+i+"\ndivisa inicial "+initialCurrencyVEC[i]+"\n divisa deseada "+desiredCurrencyVEC[i]+"\n cantidad "+amountVEC[i] +"\n full http json response"+"\n"+jsonObject );
+            Thread.sleep(10500);
+            Printing.Validation(conversionRates,amountVEC[i], initialCurrencyVEC[i], desiredCurrencyVEC[i]);}*/
     }
 }

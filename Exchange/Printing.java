@@ -23,22 +23,34 @@ public class Printing {
         String[] topCurrencies = new String[7];
         int i =2;
         if (conversionRates.has(desiredCurrency)){
-            topCurrencies[0]="1 "+initialCurrency+" = 1 "+desiredCurrency+" : "+conversionRates.get(desiredCurrency).getAsFloat()+"\n";
+            topCurrencies[0]="1 "+initialCurrency+" = "+conversionRates.get(desiredCurrency).getAsFloat()+" "+desiredCurrency+"\n";
+            topCurrencies[1]="\nMost Traded Currencies\n";
+        }
+        for (String currency : currencies) {//take each top currency component in the Json
+            if (conversionRates.has(currency)) {
+                float rate = conversionRates.get(currency).getAsFloat();
+                topCurrencies[i]="1 "+initialCurrency+" = "+rate+" "+currency+"\n";
+                i++;
+            }
+        }
+        System.out.println(Arrays.toString(topCurrencies));
+    }
+
+    public static void amountPrinting(JsonObject conversionRates, String initialCurrency,String desiredCurrency, float amount){
+        String[] currencies = {"USD","EUR","JPY","GBP","AUD"};
+        String[] topCurrencies = new String[7];
+        int i =2;
+        if (conversionRates.has(desiredCurrency)){
+            topCurrencies[0]=amount+" "+initialCurrency+" = "+conversionRates.get(desiredCurrency).getAsFloat()*amount+" "+desiredCurrency+" : "+"\n";
             topCurrencies[1]="\nMost Traded Currencies\n";
         }
         for (String currency : currencies) {//looks each top currency component in the Json
             if (conversionRates.has(currency)) {
                 float rate = conversionRates.get(currency).getAsFloat();
-                topCurrencies[i]=currency+" : "+rate+"\n";
+                topCurrencies[i]=amount+" "+initialCurrency+" = "+rate*amount+" "+currency+"\n";
                 i++;
             }
         }
         System.out.println(Arrays.toString(topCurrencies));
-
-    }
-
-    public static void amountPrinting(JsonObject conversionRates, String initialCurrency,String desiredCurrency, float amount){
-        System.out.printf("\nresult: "+conversionRates+"\n");
-
     }
 }
