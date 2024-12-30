@@ -12,6 +12,8 @@ immutable classes: used  key word final on its declaration and variables
                   return false;} else {Telefono other = (Telefono) obj;
                        return Objects.equals(codigoDeArea, other.codigoDeArea)
                             && Objects.equals(numero, other.numero);    }  } */
+//classes String Integer Boolean are immutable -- Los String son comúnmente usados como claves en estructuras como HashMap. Si fueran mutables, cambiar su valor después de usarlos como clave afectaría su capacidad para recuperar el valor asociado.
+//enhance performance security concurrence-- paralelism
 package Exchange;
 
 public record JsonDto(String usd, String eur,String jpy,String gbp,String aud) {
