@@ -30,10 +30,10 @@ public class Printing {
             if (conversionRates.has(currency)) {
                 float rate = conversionRates.get(currency).getAsFloat();
                 topCurrencies[i]="1 "+initialCurrency+" = "+rate+" "+currency+"\n";
+                System.out.println((topCurrencies[i]));
                 i++;
             }
         }
-        System.out.println(Arrays.toString(topCurrencies));
     }
 
     public static void amountPrinting(JsonObject conversionRates, String initialCurrency,String desiredCurrency, float amount){
