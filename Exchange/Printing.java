@@ -33,6 +33,7 @@ public class Printing {
                 i++;
             }
         }
+        System.out.println("Class Printing line 36 unitPrinting Use case amount: 0 - 1 ");
         System.out.println(Arrays.toString(topCurrencies));
     }
 
@@ -51,6 +52,7 @@ public class Printing {
                 i++;
             }
         }
+        System.out.println("Class Printing line 55 amountPrinting Use case amount: <0 || >0 ");
         System.out.println(Arrays.toString(topCurrencies));
     }
 }
