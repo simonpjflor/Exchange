@@ -1,10 +1,7 @@
 /*shows info according to the input use case*/
 package Exchange;
-
 import com.google.gson.JsonObject;
-
 import java.util.Arrays;
-
 public class Printing {
 
     public static void Validation(JsonObject conversionRates, float amount, String initialCurrency, String desiredCurrency){
@@ -32,11 +29,6 @@ public class Printing {
                 i++;
             }
         }
-<<<<<<< HEAD
-=======
-        System.out.println("Class Printing line 36 unitPrinting Use case amount: 0 - 1 ");
-        System.out.println(Arrays.toString(topCurrencies));
->>>>>>> gsonTesting
     }
 
     public static void amountPrinting(JsonObject conversionRates, String initialCurrency,String desiredCurrency, float amount){
