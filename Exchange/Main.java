@@ -2,9 +2,9 @@
 Main//Gets inputs//calls methods
 */
 package Exchange;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.Scanner;
 public class Main {
 
@@ -34,5 +34,27 @@ public class Main {
             System.out.println(" iterador "+i+"\ndivisa inicial "+initialCurrencyVEC[i]+"\n divisa deseada "+desiredCurrencyVEC[i]+"\n cantidad "+amountVEC[i] +"\n full http json response"+"\n"+jsonObject[i] );
             Thread.sleep(10000);
             Printing.Validation(conversionRates[i],amountVEC[i], initialCurrencyVEC[i], desiredCurrencyVEC[i]);}*/
+=======
+import java.util.InputMismatchException;
+public class Main {
+
+    public static void main() throws IOException, InterruptedException {
+        String retorno = null;
+        while (true){
+            try{
+                retorno = InputHandler.calling();
+                System.out.println("Class Main line 17 exxeption Try::Success: ");
+            }catch(NullPointerException e){
+                System.out.println("Class Main line 21 exxeption Excepcion ::Catch Divisa actual erronea: ");
+            } catch(InputMismatchException e){
+                System.out.println("Class Main line 24 exxeption Excepcion ::Catch cantidad erroneoa: ");
+            }catch (JsonSyntaxException e){
+                System.out.println("weird shit going on InputMismatchException");
+            }finally {
+                System.out.println(retorno);
+                System.out.println("intentalo nuevamente");
+            }
+        }
+>>>>>>> gsonTesting
     }
 }
