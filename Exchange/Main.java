@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 public class Main {
 
-    public static void main() throws IOException, InterruptedException {
+    public static void main(){
         String retorno = null;
         while (true){
             try{

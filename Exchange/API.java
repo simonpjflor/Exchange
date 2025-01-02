@@ -20,12 +20,18 @@ public class API {
     public static String getRequestetCurrency() {return requestetCurrency;}
     public static void setRequestetCurrency(String digitedCurrency){ requestetCurrency = digitedCurrency;}
 
-    public static String apiConsume(String digitedCurrency) throws IOException, InterruptedException {
+    public static String apiConsume(String digitedCurrency){
+        try{
         setRequestetCurrency(digitedCurrency);
         setApiUrl();
         HttpClient myHttpClient = HttpClient.newHttpClient();
         HttpRequest myHttpRequest = HttpRequest.newBuilder().uri(URI.create(apiUrl)).build();
         HttpResponse<String> apiResponse = myHttpClient.send(myHttpRequest, HttpResponse.BodyHandlers.ofString());
         return  apiResponse.body();
+        }catch (IOException | InterruptedException e)
+        {
+            System.out.println("IOException, InterruptedException exception trown");
+            return null;
+        }
     }
 }

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class InputHandler {
-    public static String calling()throws IOException, InterruptedException{
+    public static String calling(){
 //inputs
         System.out.println("Ingrese la cantidad  a convertir");
         Scanner consoleInput = new Scanner(System.in);
