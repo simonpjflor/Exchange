@@ -13,7 +13,6 @@ public class Main {
             try{
                 retorno = InputHandler.calling();
                 System.out.println("Class Main line 17 exxeption Try::Success: ");
-                break;
             }catch(NullPointerException e){
                 System.out.println("Class Main line 21 exxeption Excepcion ::Catch Divisa actual erronea: ");
             } catch(InputMismatchException e){

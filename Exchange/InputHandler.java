@@ -23,10 +23,12 @@ public class InputHandler {
         JsonObject jsonObject = JsonParser.parseString(API.apiConsume(initialCurrency)).getAsJsonObject();
         JsonObject conversionRates = jsonObject.getAsJsonObject("conversion_rates");
         Printing.Validation(conversionRates,amount, initialCurrency, desiredCurrency);
+        /*amount=0.0f;
+        initialCurrency=desiredCurrency=null;
+        System.gc();*///That wont help the error, getting bad currency exception while using iterators
         return amount+":"+initialCurrency+":"+desiredCurrency;
 
-
-  /*      float[] amountVEC = {-5.0f,0.0f,1.0f,4.0f};
+      /*  float[] amountVEC = {-5.0f,0.0f,1.0f,4.0f};
         String[] initialCurrencyVEC = {"EUR","USD","AUD","GBP"};
         String[] desiredCurrencyVEC = {"COP","COP","JPY","cop"};//strings passed within 'cop' single quotes are taken as one single char
         for (int i=0; i<=3; i++){
@@ -35,8 +37,8 @@ public class InputHandler {
             System.out.println(" iterador "+i+"\ndivisa inicial "+initialCurrencyVEC[i]+"\n divisa deseada "+desiredCurrencyVEC[i]+"\n cantidad "+amountVEC[i] +"\n full http json response"+"\n"+jsonObject );
             Thread.sleep(10500);
             Printing.Validation(conversionRates,amountVEC[i], initialCurrencyVEC[i], desiredCurrencyVEC[i]);
-        }*/
-        //return amountVEC+""+initialCurrencyVEC+desiredCurrencyVEC;
+        }
+        return amountVEC+""+initialCurrencyVEC+desiredCurrencyVEC;*/
     }
 }
 
