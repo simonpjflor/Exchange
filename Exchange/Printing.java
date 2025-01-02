@@ -9,9 +9,7 @@ public class Printing {
 
     public static void Validation(JsonObject conversionRates, float amount, String initialCurrency, String desiredCurrency){
 
-        if (amount <0){
-            amount =-amount;
-        }if (amount ==0 || amount ==1) {
+       if (amount ==0 || amount ==1) {
             Printing.unitPrinting(conversionRates,initialCurrency,desiredCurrency);
         }else{
             Printing.amountPrinting(conversionRates,initialCurrency,desiredCurrency,amount);

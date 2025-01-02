@@ -16,6 +16,9 @@ public class InputHandler {
         String initialCurrency = consoleInput.next().toUpperCase();
         System.out.println("Ingrese la divisa deseada");
         String desiredCurrency = consoleInput.next().toUpperCase();
+        if (amount <0){
+            amount =-amount;
+        }
 // Using JsonObjects
         JsonObject jsonObject = JsonParser.parseString(API.apiConsume(initialCurrency)).getAsJsonObject();
         JsonObject conversionRates = jsonObject.getAsJsonObject("conversion_rates");
