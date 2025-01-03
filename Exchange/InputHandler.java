@@ -24,6 +24,7 @@ public class InputHandler {
         /*amount=0.0f;
         initialCurrency=desiredCurrency=null;
         System.gc();*///That wont help the error, getting bad currency exception while using iterators
+
         return amount+":"+initialCurrency+":"+desiredCurrency;
 
       /*  float[] amountVEC = {-5.0f,0.0f,1.0f,4.0f};

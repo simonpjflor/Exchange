@@ -21,7 +21,7 @@ public class Printing {
             topCurrencies[0]="1 "+initialCurrency+" = "+conversionRates.get(desiredCurrency).getAsFloat()+" "+desiredCurrency+"\n";
             topCurrencies[1]="\nMost Traded Currencies\n";
         }
-        for (String currency : currencies) {//take each top currency component in the Json
+        for (String currency : currencies) {
             if (conversionRates.has(currency)) {
                 float rate = conversionRates.get(currency).getAsFloat();
                 topCurrencies[i]="1 "+initialCurrency+" = "+rate+" "+currency+"\n";
@@ -39,7 +39,7 @@ public class Printing {
             topCurrencies[0]=amount+" "+initialCurrency+" = "+conversionRates.get(desiredCurrency).getAsFloat()*amount+" "+desiredCurrency+" : "+"\n";
             topCurrencies[1]="\nMost Traded Currencies\n";
         }
-        for (String currency : currencies) {//looks each top currency component in the Json
+        for (String currency : currencies) {
             if (conversionRates.has(currency)) {
                 float rate = conversionRates.get(currency).getAsFloat();
                 topCurrencies[i]=amount+" "+initialCurrency+" = "+rate*amount+" "+currency+"\n";
