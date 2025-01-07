@@ -20,27 +20,13 @@ import com.google.gson.annotations.SerializedName;
         @SerializedName("AUD")
         private float aud = 0.0f;
 
-
         public float getUsd() {return usd;}
-        public void setUsd(float usd) {this.usd = usd;}
-
         public float getEur() {return eur;}
-        public void setEur(float eur) {this.eur = eur;}
-
         public float getJpy() {return jpy;}
-        public void setJpy(float jpy) {this.jpy = jpy;}
-
         public float getGbp() {return gbp;}
-        public void setGbp(float gbp) {this.gbp = gbp;}
-
         public float getAud() {return aud;}
-        public void setAud(float aud) {this.aud = aud;}
         }
-
         public String getApiResponseStatus() {return apiResponseStatus;}
-        public void setApiResponseStatus(String apiResponseStatus) {this.apiResponseStatus = apiResponseStatus;}
-
         public ConversionRates getstoredConversions() {return storedConversions;}
-        public void setstoredConversions(ConversionRates storedConversions) {this.storedConversions = storedConversions;}
     }
 
